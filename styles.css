@@ -1,50 +1,141 @@
 body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6rem;
+}
+
+.nav_lst{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    list-style: none;
+}
+
+.nav_lst > li >a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.header{
+    background: #01002b;
+    padding: 2rem 15rem;
+    padding-bottom: 10rem;
+}
+
+.h-whole{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.h-left{
+    width: 45%;
+    color: white;
+}
+
+.l-con{
     padding: 0;
     margin: 0;
 }
 
-.outer{
-    background-color: rgb(228, 228, 228);
+.l-con > h1{
+    font-size: 5rem;
+}
+
+.l-con > p{
+    font-size: 1.2rem;
+}
+
+.l-con > button{
+    padding: 1rem 4rem;
+    border: none;
+    background: #002dc2;
+    color: white;
+    border-radius: .5rem;
+}
+
+.rand_info{
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
+    gap: 2rem;
+    align-items: center;
+    flex-direction: column;
+    padding: 6rem 15rem;
+
 }
 
 .box{
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 5rem;
-    border-radius: 4rem;
-    width: fit-content;
-}
-
-p{
-    max-width: 60rem;
-    text-align: center;
-}
-
-.imgCon{
-    width: 300px;
-    height: 400px;
-    border-radius: 3rem;
-}
-
-.imgCon:hover{
-    transition: ease-in-out .5s;
-    transform: scale(1.05);
+    height: 300px;
+    width: 100%;
+    border: 4px solid blue;
     border-radius: 1rem;
 }
 
-.box:hover{
-    box-shadow: rgb(100, 100, 100) 10px 10px 50px;
-    transition: ease-in-out .5s;
+.rand_box{
+    display: flex;
+    gap: 7rem;
+    text-align: center;
+
 }
 
-.img-gal{
+.slogan{
+    background: #afafaf;
+    padding: 10rem 20rem;   
     display: flex;
-    gap: 5rem;
+    flex-direction: column;
+}
+
+.slogan > i{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight:100;
+}
+
+.slogan > p{
+    align-self: end;
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+.callBack{
+    padding: 10rem 20rem; 
+}
+
+.call-con{
+    background: rgba(5, 87, 194, 0.733);
+    padding: 2rem 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.call-con > div > button{
+    background: transparent;
+    border: 1px solid white;
+    padding: 1rem 3rem;
+    color: white;
+    border-radius: .5rem;
+}
+
+.footer{
+    padding: 2rem;
+    background: #01002b;
+    color: white;
+    text-align: center;
+}
+
+button{
+    font-size: 1.3rem;
+    cursor: pointer;
 }
