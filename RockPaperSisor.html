@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            gap: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .btn{
+            display: flex;
+            gap: 3rem;
+            background: rgb(206, 206, 206);
+            padding: 4rem 6rem;
+            border-radius:1rem ;
+            
+        }.btn > button{
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            border: none;
+            background: rgb(158, 158, 158);
+            font-size: 1.2rem;
+            cursor:pointer
+        }
+        .res{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #bebebe;
+            padding: 0 2rem;
+            border-radius: 1rem;
+        }
+        #rest{
+            background: #8f8f8f;
+            border:none;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            color: white;
+            border-radius: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <div style="display: flex;flex-direction: column;gap: 1rem;">
+        <h1 style="text-align: center;">Your Chooise</h1>
+        <div class="btn">
+            <button id="rock">Rock</button>
+            <button id = 'paper'>Paper</button>
+            <button id="sis">Sissors</button>
+        </div>
+    </div>
+
+    <div class="res">
+        <h1>Points <span id="point"></span></h1>
+        <h1 id="res">0</h1>
+    </div>
+
+    <button id="rest">Restart</button>
+
+    <script>
+        let points = 0;
+        let res = "";
+        const displayPoints = () =>{
+            document.getElementById("point").innerText = points;
+            document.getElementById("res").innerText = res;
+        }
+
+        const handleReset = () =>{
+            points = 0;
+            res = "Reset the game"
+            displayPoints()
+        }
+
+        let roc = document.getElementById("rock")
+        let pap = document.getElementById("paper")
+        let sis = document.getElementById("sis")
+        let rst = document.getElementById("rest");
+
+        rst.addEventListener("click",()=>{
+            handleReset()
+        })
+        
+
+        roc.addEventListener('click',()=>{
+            let comp = Math.round(Math.random()*3);
+            console.log(comp)
+            if(comp==0){
+                res = "Draw";
+            }
+            else if(comp!==1){
+                points+=1
+                res = "You win";
+            }else{
+                res = "You Lost"
+            }
+            displayPoints()
+        })
+
+        pap.addEventListener('click',()=>{
+            let comp = Math.round(Math.random()*3);
+            if(comp==1){
+               res = "Draw";
+           }
+            else if(comp!==2){
+                points+=1
+                res = "You win";
+            }
+            else{
+                res = "You Lost"
+            }
+            displayPoints()
+        })
+
+        sis.addEventListener('click',()=>{
+            let comp = Math.round(Math.random()*3);
+            if(comp==2){
+                res = "Draw";
+            }
+            else if(comp!==0){
+                points+=1
+                res = "You win";
+            }else{
+                res = "You Lost"
+            }
+            displayPoints()
+        })
+    </script>
+    
+</body>
+</html>
