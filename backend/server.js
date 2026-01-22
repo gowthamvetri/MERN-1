@@ -16,10 +16,20 @@ app.use(express.json())
 //server -> routes -> controllers
 //While creating it will be in reverse process
 app.use("/api",userRoute)
-app.use("/api",taskRoute)
+app.use("/task",taskRoute)
+
+app.get("/",(req,res)=>{
+    res.json({
+        message:"Hello from server"
+    })
+})
+
+//With out Middleware
+//req->routes->controller->response
+//with Middleware
+//req->routes->middleware->controller->response
 
 
 app.listen(8080,()=>{
     console.log("Hello from server");
 })
-
