@@ -2,6 +2,7 @@
 //Client -> sends the request and wait for the response from the backend
 //Server -> serve the response for the client request
 
+import cors from "cors"
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "./config/dbConfig.js";
@@ -12,6 +13,7 @@ dotenv.config()
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 //server -> routes -> controllers
 //While creating it will be in reverse process

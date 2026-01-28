@@ -1,0 +1,18 @@
+
+import React from 'react'
+import Child from './Child'
+
+const Parent = () => {
+
+    const getData = (data)=>{
+        console.log("Data Recived from the Child:",data)
+    }
+
+  return (
+    <div>
+        <Child send={getData}/>
+    </div>
+  )
+}
+
+export default Parent
