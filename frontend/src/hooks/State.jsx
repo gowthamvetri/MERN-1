@@ -1,17 +1,19 @@
-import React, { use, useState } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 //useState sytax
 //const [variable,setVsriable]  = useState(initialValue)
-
 //state -> data that change over time.
+
 const State = () => {
 
     const [count,setCount] = useState(0)
     const [like,setLike] = useState(0)
     const navigateion = useNavigate()
   
-    
+    useEffect(()=>{
+      console.log("Hello")
+    })
 
   return (
 

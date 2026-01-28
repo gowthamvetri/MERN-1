@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { userContext } from '../App'
 
-const Profile = ({name,skills}) => {
+const Profile = ({skills}) => {
+
+  const name = useContext(userContext)
+  console.log(name)
+
   return (
     <div>
-      <h1>Hello {name}. How are you ??</h1>
+      <h1>Hello {name.user}. How are you ??</h1>
       <ul className='list-decimal'>
       {
         skills.map((val)=>{
